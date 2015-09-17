@@ -1,25 +1,26 @@
-package chapter01.threadmanager.demo06_join;
+package com.tomkasp.chapter01threadmanager.demo06_join;
 
 import java.util.Date;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// 创建DataSourcesLoader线程
-		DataSourcesLoader dsLoader = new DataSourcesLoader();
+
+        DataSourcesLoader dsLoader = new DataSourcesLoader();
 		Thread thread1 = new Thread(dsLoader, "DataSourceThread");
 		thread1.start();
 
-		// 创建NetworkConnectionsLoader线程
 		NetworkConnectionsLoader ncLoader = new NetworkConnectionsLoader();
 		Thread thread2 = new Thread(ncLoader, "NetworkConnectionLoader");
 		thread2.start();
 
 		try {
+            //Main thread has been suspended
 			thread1.join();
-			//System.out.println("==========================================");
+			System.out.println("Main has been released by thread DataSourcesLoader==========================================");
 			thread2.join();
-		} catch (InterruptedException e) {
+            System.out.println("Main has been released by thread NetworkConnectionsLoader==========================================");
+        } catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 

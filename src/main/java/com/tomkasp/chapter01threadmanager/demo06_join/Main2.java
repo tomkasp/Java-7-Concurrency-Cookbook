@@ -1,16 +1,17 @@
-package chapter01.threadmanager.demo06_join;
+package com.tomkasp.chapter01threadmanager.demo06_join;
+
 
 import java.util.Date;
 
 public class Main2 {
 
 	public static void main(String[] args) {
-		// ´´½¨DataSourcesLoaderÏß³Ì
+		// ï¿½ï¿½ï¿½ï¿½DataSourcesLoaderï¿½ß³ï¿½
 		DataSourcesLoader dsLoader = new DataSourcesLoader();
 		Thread thread1 = new Thread(dsLoader, "DataSourceThread");
 		thread1.start();
 
-		// ´´½¨NetworkConnectionsLoaderÏß³Ì
+		// ï¿½ï¿½ï¿½ï¿½NetworkConnectionsLoaderï¿½ß³ï¿½
 		NetworkConnectionsLoader ncLoader = new NetworkConnectionsLoader();
 		Thread thread2 = new Thread(ncLoader, "NetworkConnectionLoader");
 		thread2.start();

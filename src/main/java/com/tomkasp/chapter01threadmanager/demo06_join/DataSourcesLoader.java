@@ -1,4 +1,4 @@
-package chapter01.threadmanager.demo06_join;
+package com.tomkasp.chapter01threadmanager.demo06_join;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -10,9 +10,9 @@ public class DataSourcesLoader implements Runnable {
 		
 		System.out.printf("Begining data sources loading: %s\n",new Date());
 		try {
-			// µÈ´ý4Ãë
+			// ï¿½È´ï¿½4ï¿½ï¿½
 //			TimeUnit.SECONDS.sleep(4);
-			TimeUnit.SECONDS.sleep(6);
+			TimeUnit.SECONDS.sleep(20);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
